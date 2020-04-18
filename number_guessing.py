@@ -1,6 +1,9 @@
 import random
+#let user set random number range
+range_begin = input('Please enter number range from: ')
+range_end = input('to: ')
 
-r = random.randint(1,100)
+r = random.randint(int(range_begin),int(range_end))
 count = 0
 
 while True:
@@ -8,7 +11,10 @@ while True:
 	count += 1
 	user_input = int(user_input) #casting
 	if user_input == r:
-		print('Correct!', count, 'times guessing')
+		if count == 1:
+			print('Correct!', count, 'guess')
+		else: 
+			print('Correct!', count, 'guesses')
 		break
 	elif user_input < r:
 		print('Higher!')
